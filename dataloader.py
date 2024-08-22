@@ -42,4 +42,4 @@ class CustomDataset(Dataset):
         if self.f_transform:
             FGS1_data = self.f_transform(FGS1_data)
         
-        return torch.tensor(AIRS_data), torch.tensor(FGS1_data), index, self.a_data[index]
+        return torch.tensor(AIRS_data), torch.tensor(FGS1_data), index
