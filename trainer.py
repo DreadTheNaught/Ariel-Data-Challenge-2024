@@ -3,6 +3,7 @@ import torch
 from utils.utility import get_config_data
 import os
 from datetime import datetime
+import wandb
 
 
 class train_valid_test():
@@ -11,8 +12,8 @@ class train_valid_test():
     def __init__(self, model, train_loader, valid_loader, loss_func) -> None:
 
 
-        if not os.path.exists('models'):
-            os.makedirs('models')
+        if not os.path.exists('checkpts'):
+            os.makedirs('checkpts')
 
 
         self.data = get_config_data()
@@ -32,7 +33,7 @@ class train_valid_test():
         self.optimizer = torch.optim.Adam(
             params=self.model.parameters(),
             lr=self.data['optimizer']['learning_rate'],
-            betas=tuple(self.data['optimizer']['betas']),
+            betas=self.data['optimizer']['betas'],
             eps=self.data['optimizer'].get('eps', 1e-8),
             weight_decay=self.data['optimizer'].get('weight_decay', 0.0),
             amsgrad=self.data['optimizer'].get('amsgrad', False),
@@ -43,8 +44,26 @@ class train_valid_test():
             fused=self.data['optimizer'].get('fused', None)
         )
 
+        
+        wandb.login(key=self.data.get('wandb_login_key'))
+        wandb.init(project=self.data.get('wandb_project'), name=self.data.get('wandb_project_name'))
+
+        wandb.config.update({
+        "learning_rate": self.data['optimizer']['learning_rate'],
+        "epochs": self.epoch,
+        })
+
+
+        
+        wandb.watch(self.model, log='all', log_freq=50)
+
+        self.grad_norms = {name: [] for name, prm in self.model.named_parameters()}
+
 
         self.__train_init()
+
+
+        wandb.finish()
 
     
 
@@ -64,13 +83,26 @@ class train_valid_test():
                 self.__save_chkpt(chkpt, datetime.now().strftime("%Y%m%d_%H%M%S"))
 
 
-            print(f"epoch {i + 1}, training - running loss: {running_loss}")
+            print(f"epoch: {i + 1}, training-loss: {running_loss}")
+
+            for name, param in self.model.named_parameters():
+                if param.grad is not None:
+                    grad_norm = param.grad.norm().item()
+                    self.grad_norms[name].append(grad_norm)
+
+                    wandb.log({f"grad_norms/{name}": grad_norm}, step=i + 1)
 
 
-            running_loss = self.__valid()
+            valid_loss = self.__valid()
 
 
-            print(f"epoch {i + 1}, valid - running loss: {running_loss}")
+            wandb.log({
+            "train_loss": running_loss,
+            "valid_loss": valid_loss,
+            }, step=i + 1)
+
+
+            print(f"epoch: {i + 1}, valid-loss: {valid_loss}")
             
 
 
@@ -80,20 +112,30 @@ class train_valid_test():
         running_loss = 0.0
 
         for idx, (inps, label) in enumerate(loop):
-            inps = inps.to(self.device)
-            label = label.float().to(self.device)
-
-            preds = self.model(inps)
-            loss = self.loss_func(preds, label)
-
-            self.optimizer.zero_grad() 
-            loss.backward()  
-            self.optimizer.step()
+            
+            loss = self.__run_batch(inps, label)
 
             loop.set_postfix(loss=loss.item())
-            running_loss += loss.item()
+            running_loss += loss.detach().item()
 
         return running_loss / len(self.train_loader)
+    
+
+    def __run_batch(self, inps, label):
+
+        inps = inps.to(self.device)
+        label = label.float().to(self.device)
+
+        preds = self.model(inps)
+        loss = self.loss_func(preds, label)
+
+        self.optimizer.zero_grad() 
+        loss.backward()  
+        self.optimizer.step()
+
+        return loss.item()
+
+
     
 
 
@@ -114,7 +156,7 @@ class train_valid_test():
 
 
                 loop.set_postfix(loss=loss.item())
-                running_loss += loss.item()
+                running_loss += loss.detach.item()
 
             return running_loss / len(self.valid_loader)
         
@@ -127,7 +169,7 @@ class train_valid_test():
 
     def __save_chkpt(self, state, idx):
 
-        path = f'models/Img_Colrz{idx}.pth.tar'
+        path = f'checkpts/Img_Colrz{idx}.pth.tar'
 
         torch.save(state, path)
 
