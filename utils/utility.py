@@ -6,6 +6,8 @@ import random
 import os
 import numpy as np
 import torch
+import json
+
 
 def grad_flow_dict(named_parameters: dict) -> dict:
     """
@@ -28,6 +30,7 @@ def grad_flow_dict(named_parameters: dict) -> dict:
             
     return {layers[i]: ave_grads[i] for i in range(len(ave_grads))}
 
+
 def seed_everything(seed: int) -> None:
     """
     Sets the seed for generating random numbers to ensure reproducibility.
@@ -45,3 +48,8 @@ def seed_everything(seed: int) -> None:
     torch.cuda.manual_seed(seed)
     torch.backends.cudnn.deterministic = True
     torch.backends.cudnn.benchmark = True
+
+
+def get_config_data():
+    with open('config.json', 'r') as file:
+        return json.load(file)
