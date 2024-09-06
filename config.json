@@ -12,6 +12,13 @@
         "chkpt_per_epoch" : 5,
 
 
+        "wandb_login_key" : "",
+
+        "wandb_project" : "",
+        
+        "wandb_project_name" : "",
+
+
 
         "dataset" : {
             "train_data" : "Data/ariel-data-challenge-2024/train",
