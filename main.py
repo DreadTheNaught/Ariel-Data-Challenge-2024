@@ -17,14 +17,9 @@ class MSE_percLoss(nn.Module):
 
     def forward(self, pred, label):
         return self.loss(pred, label) / (label ** 2)
+    
 
-
-if __name__ == "__main__":
-
-    data = get_config_data()
-
-    seed_everything(data.get('seed_number'))
-
+def get_transforms():
 
     a_transform = transforms.Compose([
         transforms.ToTensor(),
@@ -36,6 +31,19 @@ if __name__ == "__main__":
         transforms.Normalize(mean = [0.0] * data.get('depth'), std = [1.0] * data.get('depth'))
     ])
 
+    return a_transform, f_transform
+
+
+
+
+if __name__ == "__main__":
+
+    data = get_config_data()
+
+    seed_everything(data.get('seed_number'))
+
+
+    a_transform, f_transform = get_transforms()
 
 
     dataset = LoadPreprocessed(data_dir=data.get('preprocessed').get('train_data'), 
@@ -52,11 +60,9 @@ if __name__ == "__main__":
 
     valid_loader = DataLoader(dataset=valid_ds, **data['data_loader']['train'])
 
-    model = mod()
     
     loss_func = MSE_percLoss()
 
     del data
 
-
-    train_valid_test(model = model,train_loader = train_loader, valid_loader = valid_loader, loss_func = loss_func)
+    train_valid_test(model = mod(), train_loader = train_loader, valid_loader = valid_loader, loss_func = loss_func)
