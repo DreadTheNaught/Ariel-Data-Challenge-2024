@@ -163,7 +163,7 @@ class PreprocessAndLoad(Dataset):
         end = time.time()
         print(f'total time - {end-start}')
         return data
-
+    
 class LoadPreprocessed(Dataset):
     def __init__(self, data_dir, labels_dir, a_transform=None, f_transform=None):
         super().__init__()
@@ -198,12 +198,10 @@ class LoadPreprocessed(Dataset):
 
         # AIRS_data = AIRS_data.values
         # FGS1_data = FGS1_data.values
-        labels = torch.tensor(self.labels.iloc[index][1:])
-
+        labels = torch.tensor(self.labels.iloc[index, 1:],dtype=torch.float16)
         if self.a_transform:
             AIRS_data = self.a_transform(AIRS_data)
         if self.f_transform:
             FGS1_data = self.f_transform(FGS1_data)
-
         data = {"signals" : {"FGS1" : FGS1_data, "AIRS" : AIRS_data}, "labels" : labels}
         return data
