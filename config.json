@@ -12,11 +12,11 @@
         "chkpt_per_epoch" : 5,
 
 
-        "wandb_login_key" : "",
+        "wandb_login_key" : "6cfcc8a8bfe1d3b89f7786a2e404ba7ce6df7a51",
 
-        "wandb_project" : "",
+        "wandb_project" : "NeurIPS Ariel Data Challenge",
         
-        "wandb_project_name" : "",
+        "wandb_project_name" : "NeurIPS Ariel Data Challenge",
 
 
 
@@ -27,8 +27,8 @@
 
 
         "preprocessed" : {
-            "train_data" : "nurips/Ariel-Data-Challenge-2024/Data/preprocessed",
-            "labels" : "nurips/Ariel-Data-Challenge-2024/Data/train_labels.csv"
+            "train_data" : "preprocessed",
+            "labels" : "train_labels.csv"
         },
 
         "optimizer":{

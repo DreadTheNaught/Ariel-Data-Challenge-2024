@@ -1,0 +1,18 @@
+{"time":"2024-09-28T16:02:18.6714384+05:30","level":"INFO","msg":"using version","core version":"0.18.1"}
+{"time":"2024-09-28T16:02:18.6714384+05:30","level":"INFO","msg":"created symlink","path":"C:\\Users\\prana\\Documents\\Python_Stuff\\Ariel-Data-Challenge-2024\\wandb\\run-20240928_160218-3y8s33ab\\logs\\debug-core.log"}
+{"time":"2024-09-28T16:02:18.6742522+05:30","level":"INFO","msg":"using version","core version":"0.18.1"}
+{"time":"2024-09-28T16:02:18.6742522+05:30","level":"INFO","msg":"created symlink","path":"C:\\Users\\prana\\Documents\\Python_Stuff\\Ariel-Data-Challenge-2024\\wandb\\run-20240928_160218-3y8s33ab\\logs\\debug-core.log"}
+{"time":"2024-09-28T16:02:18.6886728+05:30","level":"INFO","msg":"created new stream","id":"3y8s33ab"}
+{"time":"2024-09-28T16:02:18.6886728+05:30","level":"INFO","msg":"stream: started","id":"3y8s33ab"}
+{"time":"2024-09-28T16:02:18.6886728+05:30","level":"INFO","msg":"handler: started","stream_id":{"value":"3y8s33ab"}}
+{"time":"2024-09-28T16:02:18.6886728+05:30","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"3y8s33ab"}}
+{"time":"2024-09-28T16:02:18.6886728+05:30","level":"INFO","msg":"sender: started","stream_id":{"value":"3y8s33ab"}}
+{"time":"2024-09-28T16:02:19.2868408+05:30","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-09-28T16:02:19.2941614+05:30","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-09-28T16:03:30.3505958+05:30","level":"INFO","msg":"stream: closing","id":"3y8s33ab"}
+{"time":"2024-09-28T16:03:30.3516036+05:30","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-09-28T16:03:30.3516036+05:30","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-09-28T16:03:31.8877316+05:30","level":"INFO","msg":"handler: closed","stream_id":{"value":"3y8s33ab"}}
+{"time":"2024-09-28T16:03:31.8877316+05:30","level":"INFO","msg":"sender: closed","stream_id":{"value":"3y8s33ab"}}
+{"time":"2024-09-28T16:03:31.8877316+05:30","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"3y8s33ab"}}
+{"time":"2024-09-28T16:03:31.8892716+05:30","level":"INFO","msg":"stream: closed","id":"3y8s33ab"}

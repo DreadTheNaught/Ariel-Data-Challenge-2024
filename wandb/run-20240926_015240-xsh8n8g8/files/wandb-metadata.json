@@ -1,0 +1,32 @@
+{
+  "os": "Windows-10-10.0.22631-SP0",
+  "python": "3.11.8",
+  "startedAt": "2024-09-25T20:22:40.190196Z",
+  "program": "C:\\Users\\prana\\Documents\\Python_Stuff\\Ariel-Data-Challenge-2024\\main.py",
+  "codePath": "main.py",
+  "git": {
+    "remote": "https://github.com/DreadTheNaught/Ariel-Data-Challenge-2024.git",
+    "commit": "f3102aec9f93b687ce5c6a44eeec052133a32bc3"
+  },
+  "email": "pranavganesh91@gmail.com",
+  "root": "C:\\Users\\prana\\Documents\\Python_Stuff\\Ariel-Data-Challenge-2024",
+  "host": "Pranavs-PC",
+  "username": "prana",
+  "executable": "C:\\Users\\prana\\Documents\\Python_Stuff\\Ariel-Data-Challenge-2024\\.venv\\Scripts\\python.exe",
+  "codePathLocal": "main.py",
+  "cpu_count": 4,
+  "cpu_count_logical": 8,
+  "disk": {
+    "/": {
+      "total": "510834765824",
+      "used": "488038387712"
+    }
+  },
+  "memory": {
+    "total": "16965230592"
+  },
+  "cpu": {
+    "count": 4,
+    "countLogical": 8
+  }
+}

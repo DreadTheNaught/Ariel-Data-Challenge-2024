@@ -1,0 +1,18 @@
+{"time":"2024-09-26T01:35:24.0052555+05:30","level":"INFO","msg":"using version","core version":"0.18.1"}
+{"time":"2024-09-26T01:35:24.0057748+05:30","level":"INFO","msg":"created symlink","path":"C:\\Users\\prana\\Documents\\Python_Stuff\\Ariel-Data-Challenge-2024\\wandb\\run-20240926_013523-u43g1g12\\logs\\debug-core.log"}
+{"time":"2024-09-26T01:35:24.0083924+05:30","level":"INFO","msg":"using version","core version":"0.18.1"}
+{"time":"2024-09-26T01:35:24.0083924+05:30","level":"INFO","msg":"created symlink","path":"C:\\Users\\prana\\Documents\\Python_Stuff\\Ariel-Data-Challenge-2024\\wandb\\run-20240926_013523-u43g1g12\\logs\\debug-core.log"}
+{"time":"2024-09-26T01:35:24.0183867+05:30","level":"INFO","msg":"created new stream","id":"u43g1g12"}
+{"time":"2024-09-26T01:35:24.0188976+05:30","level":"INFO","msg":"stream: started","id":"u43g1g12"}
+{"time":"2024-09-26T01:35:24.0188976+05:30","level":"INFO","msg":"sender: started","stream_id":{"value":"u43g1g12"}}
+{"time":"2024-09-26T01:35:24.0188976+05:30","level":"INFO","msg":"handler: started","stream_id":{"value":"u43g1g12"}}
+{"time":"2024-09-26T01:35:24.0188976+05:30","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"u43g1g12"}}
+{"time":"2024-09-26T01:35:24.5937416+05:30","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-09-26T01:35:24.6016827+05:30","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-09-26T01:36:08.2457672+05:30","level":"INFO","msg":"stream: closing","id":"u43g1g12"}
+{"time":"2024-09-26T01:36:08.2559742+05:30","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-09-26T01:36:08.2559742+05:30","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-09-26T01:36:15.435727+05:30","level":"INFO","msg":"handler: closed","stream_id":{"value":"u43g1g12"}}
+{"time":"2024-09-26T01:36:15.435727+05:30","level":"INFO","msg":"sender: closed","stream_id":{"value":"u43g1g12"}}
+{"time":"2024-09-26T01:36:15.435727+05:30","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"u43g1g12"}}
+{"time":"2024-09-26T01:36:15.435727+05:30","level":"INFO","msg":"stream: closed","id":"u43g1g12"}

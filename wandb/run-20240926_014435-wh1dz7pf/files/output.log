@@ -1,0 +1,31 @@
+  0%|                                                           | 0/17 [00:31<?, ?it/s]
+Traceback (most recent call last):
+  File "C:\Users\prana\Documents\Python_Stuff\Ariel-Data-Challenge-2024\main.py", line 65, in <module>
+    train_valid_test(model = CNN(), train_loader = train_loader, valid_loader = valid_loader, loss_func = loss_func)
+  File "C:\Users\prana\Documents\Python_Stuff\Ariel-Data-Challenge-2024\trainer.py", line 64, in __init__
+    self.__train_init()
+  File "C:\Users\prana\Documents\Python_Stuff\Ariel-Data-Challenge-2024\trainer.py", line 75, in __train_init
+    running_loss = self.__train_core()
+                   ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\prana\Documents\Python_Stuff\Ariel-Data-Challenge-2024\trainer.py", line 117, in __train_core
+    label = data["label"]
+            ~~~~^^^^^^^^^
+KeyError: 'label'
+Exception in thread Thread-13 (_pin_memory_loop):
+Traceback (most recent call last):
+  File "C:\Users\prana\AppData\Local\Programs\Python\Python3118\Lib\threading.py", line 1045, in _bootstrap_inner
+    self.run()
+  File "C:\Users\prana\AppData\Local\Programs\Python\Python3118\Lib\threading.py", line 982, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\prana\Documents\Python_Stuff\Ariel-Data-Challenge-2024\.venv\Lib\site-packages\torch\utils\data\_utils\pin_memory.py", line 55, in _pin_memory_loop
+    do_one_step()
+  File "C:\Users\prana\Documents\Python_Stuff\Ariel-Data-Challenge-2024\.venv\Lib\site-packages\torch\utils\data\_utils\pin_memory.py", line 32, in do_one_step
+    r = in_queue.get(timeout=MP_STATUS_CHECK_INTERVAL)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\prana\AppData\Local\Programs\Python\Python3118\Lib\multiprocessing\queues.py", line 122, in get
+    return _ForkingPickler.loads(res)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\prana\Documents\Python_Stuff\Ariel-Data-Challenge-2024\.venv\Lib\site-packages\torch\multiprocessing\reductions.py", line 515, in rebuild_storage_filename
+    storage = torch.UntypedStorage._new_shared_filename_cpu(manager, handle, size)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Couldn't open shared event: <torch_23164_441855386_3_event>, error code: <2>

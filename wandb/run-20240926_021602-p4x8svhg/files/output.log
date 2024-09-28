@@ -1,0 +1,67 @@
+  0%|                                                           | 0/17 [00:00<?, ?it/s]C:\Users\prana\Documents\Python_Stuff\Ariel-Data-Challenge-2024\models\BasicCNN.py:77: UserWarning: The use of `x.T` on tensors of dimension other than 2 to reverse their shape is deprecated and it will throw an error in a future release. Consider `x.mT` to transpose batches of matrices or `x.permute(*torch.arange(x.ndim - 1, -1, -1))` to reverse the dimensions of a tensor. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\builder\windows\pytorch\aten\src\ATen\native\TensorShape.cpp:3701.)
+torch.Size([32, 187, 1, 32]) torch.Size([32, 187, 282, 32])
+  x = x.T
+  0%|                                                           | 0/17 [00:30<?, ?it/s]
+Traceback (most recent call last):
+  File "C:\Users\prana\Documents\Python_Stuff\Ariel-Data-Challenge-2024\main.py", line 65, in <module>
+    train_valid_test(model = CNN(), train_loader = train_loader, valid_loader = valid_loader, loss_func = loss_func)
+  File "C:\Users\prana\Documents\Python_Stuff\Ariel-Data-Challenge-2024\trainer.py", line 64, in __init__
+    self.__train_init()
+  File "C:\Users\prana\Documents\Python_Stuff\Ariel-Data-Challenge-2024\trainer.py", line 75, in __train_init
+    running_loss = self.__train_core()
+                   ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\prana\Documents\Python_Stuff\Ariel-Data-Challenge-2024\trainer.py", line 119, in __train_core
+    loss = self.__run_batch(inps, label)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\prana\Documents\Python_Stuff\Ariel-Data-Challenge-2024\trainer.py", line 133, in __run_batch
+    preds = self.model(inps)
+            ^^^^^^^^^^^^^^^^
+  File "C:\Users\prana\Documents\Python_Stuff\Ariel-Data-Challenge-2024\.venv\Lib\site-packages\torch\nn\modules\module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\prana\Documents\Python_Stuff\Ariel-Data-Challenge-2024\.venv\Lib\site-packages\torch\nn\modules\module.py", line 1603, in _call_impl
+    result = forward_call(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\prana\Documents\Python_Stuff\Ariel-Data-Challenge-2024\models\BasicCNN.py", line 80, in forward
+    x = self.cnn_block_1(x)
+        ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\prana\Documents\Python_Stuff\Ariel-Data-Challenge-2024\.venv\Lib\site-packages\torch\nn\modules\module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\prana\Documents\Python_Stuff\Ariel-Data-Challenge-2024\.venv\Lib\site-packages\torch\nn\modules\module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\prana\Documents\Python_Stuff\Ariel-Data-Challenge-2024\.venv\Lib\site-packages\torch\nn\modules\container.py", line 219, in forward
+    input = module(input)
+            ^^^^^^^^^^^^^
+  File "C:\Users\prana\Documents\Python_Stuff\Ariel-Data-Challenge-2024\.venv\Lib\site-packages\torch\nn\modules\module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\prana\Documents\Python_Stuff\Ariel-Data-Challenge-2024\.venv\Lib\site-packages\torch\nn\modules\module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\prana\Documents\Python_Stuff\Ariel-Data-Challenge-2024\.venv\Lib\site-packages\torch\nn\modules\conv.py", line 308, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\prana\Documents\Python_Stuff\Ariel-Data-Challenge-2024\.venv\Lib\site-packages\torch\nn\modules\conv.py", line 304, in _conv_forward
+    return F.conv1d(input, weight, bias, self.stride,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Input type (double) and bias type (float) should be the same
+Exception in thread Thread-13 (_pin_memory_loop):
+Traceback (most recent call last):
+  File "C:\Users\prana\AppData\Local\Programs\Python\Python3118\Lib\threading.py", line 1045, in _bootstrap_inner
+    self.run()
+  File "C:\Users\prana\AppData\Local\Programs\Python\Python3118\Lib\threading.py", line 982, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\prana\Documents\Python_Stuff\Ariel-Data-Challenge-2024\.venv\Lib\site-packages\torch\utils\data\_utils\pin_memory.py", line 55, in _pin_memory_loop
+    do_one_step()
+  File "C:\Users\prana\Documents\Python_Stuff\Ariel-Data-Challenge-2024\.venv\Lib\site-packages\torch\utils\data\_utils\pin_memory.py", line 32, in do_one_step
+    r = in_queue.get(timeout=MP_STATUS_CHECK_INTERVAL)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\prana\AppData\Local\Programs\Python\Python3118\Lib\multiprocessing\queues.py", line 122, in get
+    return _ForkingPickler.loads(res)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\prana\Documents\Python_Stuff\Ariel-Data-Challenge-2024\.venv\Lib\site-packages\torch\multiprocessing\reductions.py", line 515, in rebuild_storage_filename
+    storage = torch.UntypedStorage._new_shared_filename_cpu(manager, handle, size)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Couldn't open shared event: <torch_3860_164563037_3_event>, error code: <2>
