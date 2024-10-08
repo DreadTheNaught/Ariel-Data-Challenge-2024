@@ -1,0 +1,18 @@
+{"time":"2024-09-26T02:16:02.7669292+05:30","level":"INFO","msg":"using version","core version":"0.18.1"}
+{"time":"2024-09-26T02:16:02.7669292+05:30","level":"INFO","msg":"created symlink","path":"C:\\Users\\prana\\Documents\\Python_Stuff\\Ariel-Data-Challenge-2024\\wandb\\run-20240926_021602-p4x8svhg\\logs\\debug-core.log"}
+{"time":"2024-09-26T02:16:02.767978+05:30","level":"INFO","msg":"using version","core version":"0.18.1"}
+{"time":"2024-09-26T02:16:02.767978+05:30","level":"INFO","msg":"created symlink","path":"C:\\Users\\prana\\Documents\\Python_Stuff\\Ariel-Data-Challenge-2024\\wandb\\run-20240926_021602-p4x8svhg\\logs\\debug-core.log"}
+{"time":"2024-09-26T02:16:02.7771155+05:30","level":"INFO","msg":"created new stream","id":"p4x8svhg"}
+{"time":"2024-09-26T02:16:02.7771155+05:30","level":"INFO","msg":"stream: started","id":"p4x8svhg"}
+{"time":"2024-09-26T02:16:02.7776643+05:30","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"p4x8svhg"}}
+{"time":"2024-09-26T02:16:02.7776643+05:30","level":"INFO","msg":"sender: started","stream_id":{"value":"p4x8svhg"}}
+{"time":"2024-09-26T02:16:02.777827+05:30","level":"INFO","msg":"handler: started","stream_id":{"value":"p4x8svhg"}}
+{"time":"2024-09-26T02:16:03.4360282+05:30","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-09-26T02:16:03.4408171+05:30","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-09-26T02:16:54.8136506+05:30","level":"INFO","msg":"stream: closing","id":"p4x8svhg"}
+{"time":"2024-09-26T02:16:54.8141541+05:30","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-09-26T02:16:54.8143355+05:30","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-09-26T02:16:56.7542554+05:30","level":"INFO","msg":"handler: closed","stream_id":{"value":"p4x8svhg"}}
+{"time":"2024-09-26T02:16:56.7542554+05:30","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"p4x8svhg"}}
+{"time":"2024-09-26T02:16:56.7542554+05:30","level":"INFO","msg":"sender: closed","stream_id":{"value":"p4x8svhg"}}
+{"time":"2024-09-26T02:16:56.7601221+05:30","level":"INFO","msg":"stream: closed","id":"p4x8svhg"}

@@ -110,3 +110,8 @@ def competition_score(
 
     submit_score = (GLL_pred - GLL_mean)/(GLL_true - GLL_mean)
     return float(np.clip(submit_score, 0.0, 1.0))
+
+
+def get_mean_data_over_time(data, planet, sensor):
+    values = data[planet]["signals"][sensor].mean(axis=1).mean(axis=1)
+    return values

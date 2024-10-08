@@ -193,12 +193,12 @@ class LoadPreprocessed(Dataset):
         AIRS_data_path = self.a_data[index]
         FGS1_data_path = self.f_data[index]
 
-        AIRS_data = torch.load(AIRS_data_path)
-        FGS1_data = torch.load(FGS1_data_path)
+        AIRS_data = torch.load(AIRS_data_path).to(torch.float32)
+        FGS1_data = torch.load(FGS1_data_path).to(torch.float32)
 
         # AIRS_data = AIRS_data.values
         # FGS1_data = FGS1_data.values
-        labels = torch.tensor(self.labels.iloc[index, 1:],dtype=torch.float16)
+        labels = torch.tensor(self.labels.iloc[index, 1:],dtype=torch.float32)
         if self.a_transform:
             AIRS_data = self.a_transform(AIRS_data)
         if self.f_transform:

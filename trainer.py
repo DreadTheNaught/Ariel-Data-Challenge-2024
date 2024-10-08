@@ -17,6 +17,7 @@ class train_valid_test():
 
 
         self.data = get_config_data()
+        self.data = self.data.get('paths')
         
         self.train_loader = train_loader
         self.valid_loader = valid_loader
@@ -111,7 +112,9 @@ class train_valid_test():
         loop = tqdm(self.train_loader)
         running_loss = 0.0
 
-        for idx, (inps, label) in enumerate(loop):
+        for idx, data in enumerate(loop):
+            inps = data["signals"]
+            label = data["labels"]
             
             loss = self.__run_batch(inps, label)
 
@@ -122,10 +125,11 @@ class train_valid_test():
     
 
     def __run_batch(self, inps, label):
-
-        inps = inps.to(self.device)
+        
+        inps["FGS1"] = inps["FGS1"].to(self.device)
+        inps["AIRS"] = inps["AIRS"].to(self.device)
         label = label.float().to(self.device)
-
+        print(inps["FGS1"].shape, inps["AIRS"].shape)
         preds = self.model(inps)
         loss = self.loss_func(preds, label)
 

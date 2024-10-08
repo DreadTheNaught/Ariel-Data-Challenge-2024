@@ -3,9 +3,9 @@ from dataloader import LoadPreprocessed
 from torch.utils.data import DataLoader, random_split
 from utils.utility import seed_everything, get_config_data
 from trainer import train_valid_test
-from mod import mod
 import torch.nn as nn
 import torch
+from models.BasicCNN import CNN
 
 
 
@@ -22,12 +22,10 @@ class MSE_percLoss(nn.Module):
 def get_transforms():
 
     a_transform = transforms.Compose([
-        transforms.ToTensor(),
         transforms.Normalize(mean = [0.0] * data.get('depth'), std = [1.0] * data.get('depth'))
     ])
 
     f_transform = transforms.Compose([
-        transforms.ToTensor(),
         transforms.Normalize(mean = [0.0] * data.get('depth'), std = [1.0] * data.get('depth'))
     ])
 
@@ -39,9 +37,8 @@ def get_transforms():
 if __name__ == "__main__":
 
     data = get_config_data()
-
+    data = data.get('paths')
     seed_everything(data.get('seed_number'))
-
 
     a_transform, f_transform = get_transforms()
 
@@ -65,4 +62,4 @@ if __name__ == "__main__":
 
     del data
 
-    train_valid_test(model = mod(), train_loader = train_loader, valid_loader = valid_loader, loss_func = loss_func)
+    train_valid_test(model = CNN(), train_loader = train_loader, valid_loader = valid_loader, loss_func = loss_func)
